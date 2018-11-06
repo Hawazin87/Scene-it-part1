@@ -8,12 +8,12 @@ function renderMovies(movieArray){
 				<img class="movieImg" src="${currentMovie.Poster}"/>
 				<h3 class="movieTitle" id="movieTitle">${currentMovie.Title}</h3>
 				<h5 class="movieReleaseYear" id ="movieReleaseYear">${currentMovie.Year}</h5>
-				<button class="addButton" id="add">Add</button>
+				<button class="addButton" id="add" onclick="saveToWatchlist(${currentMovie.imdbID})">Add</button>
 			</div>
         `
     });
 
-    
+
     container.innerHTML = movieHTML.join("");
     
 };
@@ -29,5 +29,25 @@ function renderMovies(movieArray){
         movies = response.data.Search;    
 });
 });
+
+//Add to watch list
+    function saveToWatchlist(imdbID){
+        var movie = movies.find(function(currentMovie){
+            return currentMovie.imdbID == imdbID;
+
+        });
+            var watchListJSON = localStorage.getItem('watchlist');
+            var watchList = JSON.parse(watchlistJSON);
+            if (watchlist == null) {
+
+                watchList =[];
+            }
+
+            watchlist.push(movie);
+            watchlistJSON = JSON.stringify(watchlist);
+            localStorage.setItem('watchlist', watchlistJSON);
+    
+    }
+  
 
 
