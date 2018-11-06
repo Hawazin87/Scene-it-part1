@@ -1,0 +1,61 @@
+body {
+	background-color: #B2E9FD;
+}
+
+.header h2 {
+	color: #DC4247;
+}
+
+.header p {
+	color: #50524F;
+}
+
+.results {
+	margin-top: 20px;
+}
+
+.movies-container {
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.movie {
+
+	padding:0px;
+	margin-bottom:20px;
+	background-color:white;
+	border-radius: 10px;
+	max-height:700px
+}
+
+.addButton {
+
+	height : 30px;
+	width : 50px;
+	background-color:rgb(11, 92, 243);
+	color: aliceblue;
+	display: flex;
+	align-items: center ;
+	justify-content: center;
+
+}
+
+.movie img {
+
+	width: 250px;
+	border-radius: 10px;
+}
+
+.movie h3 {
+
+	font-size:20px;
+	color:black;
+	width:80px;
+	border-radius:10px;
+	margin:0 auto;
+
+}
+
